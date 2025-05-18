@@ -1,88 +1,103 @@
 ---
-title: 'Markdown Syntax'
-description: 'Text, title, and styling in standard markdown'
-icon: 'text-size'
+title: "Ein Dokument hochladen"
+description: "Mit SMARTqrPRINT kannst du Dokumente direkt über die Webseite hochladen und später bequem am Standort drucken. Diese Anleitung erklärt dir den genauen Ablauf, empfohlene Formate und häufige Fehlerquellen."
+icon: "upload"
 ---
 
-## Titles
+## Überblick
 
-Best used for section headers.
+Die Upload-Funktion ist für alle registrierten Nutzer auf der Webseite erreichbar. Voraussetzung ist ein gültiges Benutzerkonto. Falls du noch kein Konto hast, kannst du dich unter [**https://www.smartqrprint.de/register**](https://www.smartqrprint.de/register) registrieren.
 
-```md
-## Titles
-```
+---
 
-### Subtitles
+## So funktioniert der Upload
 
-Best use to subsection headers.
+Um ein Dokument hochzuladen, folge diesen Schritten:
 
-```md
-### Subtitles
-```
+1. Klicke auf die Schaltfläche „Datei auswählen“ oder ziehe die gewünschte Datei direkt in das markierte Upload-Feld.
 
-<Tip>
+<img
+  src="/images/upload-web.PNG"
+  alt="Upload Web PN"
+  title="Upload Webschaltfläche"
+  className="mx-auto"
+/>
 
-Each **title** and **subtitle** creates an anchor and also shows up on the table of contents on the right.
+1. Warte, bis der Upload abgeschlossen ist. Die Datei wird im Hintergrund analysiert und gespeichert.
+2. Nach erfolgreichem Upload erscheint dein Dokument in der Liste. Es wird automatisch ein eindeutiger Barcode generiert und angezeigt.
+3. Du erhältst zusätzlich eine E-Mail mit allen relevanten Informationen und dem Barcode als Bildanhang.
 
-</Tip>
+---
 
-## Text Formatting
+## Erlaubte Dateiformate
 
-We support most markdown formatting. Simply add `**`, `_`, or `~` around text to format it.
+Das System akzeptiert nur ausgewählte Formate. Dateien mit potenziell unsicherem Inhalt (z. B. Skripte, Makros oder ausführbare Dateien) werden automatisch abgelehnt.
 
-| Style         | How to write it   | Result          |
-| ------------- | ----------------- | --------------- |
-| Bold          | `**bold**`        | **bold**        |
-| Italic        | `_italic_`        | _italic_        |
-| Strikethrough | `~strikethrough~` | ~strikethrough~ |
+| Kategorie      | Erlaubte Formate                                          |
+| -------------- | --------------------------------------------------------- |
+| PDF und Druck  | `.pdf`, `.postscript`, `.cups-pdf`                        |
+| Bilder         | `.jpg`, `.jpeg`, `.png`, `.svg`, `.bmp`, `.tiff`, `.webp` |
+| Textdokumente  | `.txt`, `.rtf`, `.doc`, `.docx`, `.odt`                   |
+| Tabellen/Präsi | `.ods`, `.odp`                                            |
+| HTML/CSS       | `.html`, `.css`, `.xhtml`, `.xml`                         |
 
-You can combine these. For example, write `**_bold and italic_**` to get **_bold and italic_** text.
+> **Hinweis**: Word-Dokumente im Format `.docx` werden derzeit **nicht mehr unterstützt**. Bitte wandle dein Dokument vorher in eine PDF-Datei um, damit du Sie hochladen kannst. \
+> _Alternativ nutze den integrierten Windows/MacOS/Linux Drucker. _
 
-You need to use HTML to write superscript and subscript text. That is, add `<sup>` or `<sub>` around your text.
+---
 
-| Text Size   | How to write it          | Result                 |
-| ----------- | ------------------------ | ---------------------- |
-| Superscript | `<sup>superscript</sup>` | <sup>superscript</sup> |
-| Subscript   | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
+## Größen- und Seitenbeschränkung
 
-## Linking to Pages
+- Die maximale Seitenanzahl für PDF-Dateien beträgt **4 Seiten** pro Upload.
+- Dein Hauptspeicher beträgt  100MB pro Account, du dartfst dieses Limit nicht überschreiten.
+- Ein Upload ist bis 5MB pro Datei möglich. Für mehr MB nutze die API. 
 
-You can add a link by wrapping text in `[]()`. You would write `[link to google](https://google.com)` to [link to google](https://google.com).
+Wird eine dieser Grenzen überschritten, wird der Upload automatisch verweigert.
 
-Links to pages in your docs need to be root-relative. Basically, you should include the entire folder path. For example, `[link to text](/writing-content/text)` links to the page "Text" in our components section.
+---
 
-Relative links like `[link to text](../text)` will open slower because we cannot optimize them as easily.
+## Nach dem Upload
 
-## Blockquotes
+Nach dem erfolgreichen Hochladen geschieht Folgendes:
 
-### Singleline
+- Die Datei wird auf gültiges Format und Sicherheit geprüft.
+- Ein eindeutiger interner Hash wird erstellt. (dieser ist nur intern zuordenbar)
+- Ein **Barcode **wird generiert.
+- Das Barcode-Bild wird zusammen mit dem Dokument gespeichert.
+- Du erhältst eine E-Mail mit einem Link zur Datei und dem Barcode.
 
-To create a blockquote, add a `>` in front of a paragraph.
+> **Hinweis:** Der Barcode ist notwendig, um den Druck später eindeutig auszulösen.
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+---
 
-```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
-```
+## Häufige Probleme und Hinweise
 
-### Multiline
+**Die Datei wird nicht akzeptiert:**\
+Stelle sicher, dass dein Dateiformat zulässig ist und die Datei keine aktiven Inhalte (Makros, eingebettete Scripte) enthält.
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
->
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+**Es erscheint kein Barcode nach dem Upload:**\
+Lade die Seite nach einigen Sekunden neu. Sollte der Barcode auch dann nicht angezeigt werden, kontaktiere bitte den Support, über den Chat mit den Hash der Datei.
 
-```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
->
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
-```
+**Keine E-Mail erhalten:**\
+Prüfe zunächst deinen Spam-Ordner. Falls auch dort keine E-Mail zu finden ist, stelle sicher, dass deine registrierte E-Mail-Adresse korrekt ist\!
 
-### LaTeX
+---
 
-Mintlify supports [LaTeX](https://www.latex-project.org) through the Latex component.
+## Sicherheit
 
-<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+SMARTqrPRINT prüft alle Uploads serverseitig und blockiert:
 
-```md
-<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
-```
+- Dateien mit aktiven Inhalten (Makros, Scripte, eingebetteter Code)
+- unerlaubte Dateiformate
+- Uploads, die bekannte Sicherheitsrisiken darstellen
+
+Die Verarbeitung erfolgt vollständig isoliert. Dateien werden nicht verändert, nicht analysiert und nicht an Dritte weitergegeben.
+
+---
+
+## Weitere Informationen
+
+- **Registrierung oder Login:** https://www.smartqrprint.de/login
+- **Passwort vergessen:** https://www.smartqrprint.de/forgot-password-request
+
+---
