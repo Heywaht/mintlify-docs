@@ -1,28 +1,27 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "SMARTqrPRINT Doku",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#206BC4",
+    "light": "#4985CC",
+    "dark": "#206BC4"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Allgemeine Hilfe und Support",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Jetzt geht's los!",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "login-reg"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Verwaltungsbereich",
             "pages": [
               "essentials/markdown",
               "essentials/code",
@@ -35,16 +34,16 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "API Referenz",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "API Einführung",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Endpoint Beispiele",
             "pages": [
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
@@ -58,19 +57,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Dokumentation",
+          "href": "https://doku.smartqrprint.de/",
           "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
         }
       ]
     }
@@ -82,21 +71,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Kontakt",
+        "href": "mailto:support@smartqrprint.de"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "label": "Verwaltungsbereich",
+      "href": "https://www.smartqrprint.de/upload"
     }
   }
 }
