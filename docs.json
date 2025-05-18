@@ -23,7 +23,7 @@
           {
             "group": "Verwaltungsbereich",
             "pages": [
-              "essentials/markdown",
+              "essentials/upload-web",
               "essentials/code",
               "essentials/images",
               "essentials/settings",
