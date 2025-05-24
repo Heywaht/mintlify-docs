@@ -1,67 +1,129 @@
 ---
-title: "Login und Registrierung"
-description: "So meldest du dich bei SMARTqrPRINT an oder erstellst ein neues Benutzerkonto."
+title: "Authentifizierung"
+description: "Hier erfährst du, wie die Registrierung und Anmeldung bei SMARTqrPRINT funktionieren. Das System hat dabei ein paar Eigenheiten, die du kennen solltest."
 ---
 
-## Login durchführen
-
-<AccordionGroup>
-  <Accordion title="Mit E-Mail und Passwort anmelden" icon="lock">
-    Wenn du bereits ein Konto bei SMARTqrPRINT hast, kannst du dich mit deiner E-Mail-Adresse und deinem Passwort einloggen.
-
-    Bitte achte auf korrekte Schreibweise deiner Daten. Bei mehrmaligen Fehlversuchen wird dein Zugriff vorübergehend gesperrt.
-
-    Solltest du dein Passwort vergessen haben, nutze die Funktion [Passwort vergessen](https://www.smartqrprint.de/login#password-reset).
-  </Accordion>
-  <Accordion title="Login mit Discord oder Twitch" icon="user">
-    Alternativ kannst du dich auch mit einem verknüpften Discord- oder Twitch-Konto anmelden.
-
-    Wichtig: Die bei Discord oder Twitch hinterlegte E-Mail-Adresse muss mit deiner bei SMARTqrPRINT registrierten Adresse übereinstimmen, sonst wird der Login verweigert.
-
-    - [Login mit Discord](https://www.smartqrprint.de/login/discord)
-    - [Login mit Twitch](https://www.smartqrprint.de/login/twitch)
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Ein neues Konto erstellen
-
-<AccordionGroup>
-  <Accordion title="Registrierung Schritt für Schritt" icon="plus">
-    Um ein neues Benutzerkonto zu erstellen, benötigst du folgende Informationen:
-
-    - Ein selbstgewählter Spitzname (4–8 Zeichen)
-    - Deine 3-stellige Apartmentnummer (z. B. 007) und den Standort wo dein SMARTqrPRINT Station steht. 
-    - Eine gültige E-Mail-Adresse
-    - Ein sicheres Passwort (mindestens 8 Zeichen, inkl. Zahl und Sonderzeichen)
-    - Einen vierstelligen Sicherheitscode (dieser wird direkt am Drucker von SMARTqrPRINT Angezeigt.
-
-    Die Eingaben werden automatisch validiert. Bei Fehlern erhältst du eine direkte Rückmeldung im Formular und du kannst diese ggf. anpassen, wenn diese Falsch sind.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Hinweise zur Nutzung
-
-<Info>
-  Bitte beachte;
-
-  1. Verwende nur deine eigene E-Mail-Adresse. Teilen von Konten ist nicht gestattet.
-  2. Speichere dein Passwort sicher und gib es niemals an Dritte weiter.
-  3. Bei Problemen kannst du jederzeit das Support-Formular im Benutzerbereich nutzen oder uns per E-Mail schreiben.
-</Info>
-
----
-
-## Weitere Unterstützung
 
 <CardGroup cols={2}>
-  <Card title="Passwort vergessen" icon="key" href="https://www.smartqrprint.de/login#password-reset">
-    Fordere ein neues Passwort an, wenn du keinen Zugriff mehr hast\!
+  <Card title="Neu hier? Registrierung" icon="user-plus" href="#registrierung">
+    So erstellst du in wenigen Schritten dein SMARTqrPRINT-Konto. Achte auf die Details, um das System korrekt zu bedienen.
   </Card>
-  <Card title="Support kontaktieren" icon="message" href="mailto:support@smartqrprint.de">
-    Nimm direkt Kontakt mit dem Support auf.
+  <Card title="Schon dabei? Anmeldung" icon="sign-in-alt" href="#anmeldung">
+    Du hast bereits einen Account? Hier sind die Anmeldewege und was dabei zu beachten ist.
   </Card>
 </CardGroup>
+
+---
+
+## Registrierung: Dein Weg zum SMARTqrPRINT-Konto <a id="registrierung" />
+
+Die Registrierung ist dein erster Schritt. Mit den korrekten Informationen geht es schnell, aber das System prüft genau. Hier erfährst du, was du beachten musst.
+
+<Accordion title="Das brauchst du für dein neues Konto">
+  - **Nickname**: Dein Benutzername. Er muss zwischen 4 und 8 Zeichen lang und **einzigartig** sein.
+  - **Apartmentnummer**: Deine dreistellige Nummer (z.B. 007, 042, bis 500). Auch diese muss **einzigartig** sein.
+  - **E-Mail-Adresse**: Deine E-Mail-Adresse. Sie muss einem gültigen Format entsprechen und wird ebenfalls auf **Einzigartigkeit** geprüft.
+  - **Passwort**: Dein Zugangspasswort. Beachte folgende Regeln:
+    - Mindestens 8 Zeichen lang.
+    - Muss Buchstaben, mindestens eine Zahl (0-9) und mindestens ein Sonderzeichen (z.B. `!@#$%^&*`) enthalten.
+  - **Der Display-Code**: Ein 4-stelliger Zahlencode, den du von einem Display ablesen musst. Dieser Code dient zur Verifizierung.
+
+    <Info>
+      **Zur Info**: Der Display-Code wird intern mit einem Hash verglichen. Ein falscher Code führt zur Ablehnung der Registrierung.
+    </Info>
+</Accordion>
+
+### Schritte zur Registrierung:
+
+1. **Daten eingeben**: Fülle alle Felder sorgfältig aus. Beachte die Anforderungen für jedes Feld.
+2. **Passwort wählen**: Halte dich an die Passwortregeln für die Sicherheit deines Kontos.
+3. **Display-Code eingeben**: Gib den 4-stelligen Code korrekt ein.
+4. **Absenden**: Wenn alle Angaben korrekt sind, wird dein Konto erstellt und du erhältst eine Erfolgsmeldung.
+
+### Mögliche Fehlermeldungen:
+
+Wenn etwas nicht stimmt, informiert dich das System. Hier einige Beispiele:
+
+<AccordionGroup>
+  <Accordion title="Fehler bei der Eingabe:" icon="exclamation-triangle">
+    - `Der Spitzname muss mindestens 4 Zeichen lang sein!`
+    - `Der Spitzname darf nicht länger als 8 Zeichen sein!`
+    - `Die Apartmentnummer muss zwischen 001 und 500 liegen und genau 3 Zeichen enthalten!`
+    - `Bitte geben Sie eine gültige E-Mail-Adresse ein!`
+    - `Das Passwort muss mindestens 8 Zeichen lang sein und mindestens eine Zahl sowie ein Sonderzeichen enthalten!`
+    - `Der Code vom Display muss 4 Ziffern enthalten.`
+    - `Der eingegebene Code ist ungültig oder abgelaufen.`
+    - `Der Spitzname wird bereits verwendet!`
+    - `Die Apartmentnummer wird bereits verwendet!`
+    - `Die E-Mail-Adresse wird bereits verwendet!`
+
+    Diese Meldungen helfen dir, die Eingabe zu korrigieren.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Anmeldung: Zugang zu deinem Konto <a id="anmeldung" />
+
+Bereits registriert? So funktioniert der Login. Es gibt verschiedene Anmeldemethoden.
+
+### Anmeldemethoden:
+
+<Tabs>
+  <Tab title="Klassisch: E-Mail & Passwort">
+    Der Standardweg:
+
+    1. Gib deine **registrierte E-Mail-Adresse** ein.
+    2. Gib dein **Passwort** ein.
+    3. Klicke auf "Login".
+
+    <Warning>
+      Sollten E-Mail oder Passwort nicht korrekt sein, erscheint die Meldung: `Ungültige Anmeldedaten!`. Prüfe deine Eingaben.
+    </Warning>
+  </Tab>
+  <Tab title="Social Login: Discord">
+    Anmeldung über Discord:
+
+    1. Klicke auf den Button **"Login mit Discord"**.
+    2. Du wirst zu Discord weitergeleitet, um die Verbindung zu bestätigen.
+    3. **Wichtig**: Die E-Mail-Adresse deines Discord-Accounts _muss_ mit der E-Mail übereinstimmen, die du bei SMARTqrPRINT registriert hast.
+
+       <Info>
+         Ist die E-Mail-Adresse nicht identisch, wirst du zur Login-Seite zurückgeleitet. Der Fehlerhinweis `error=discord` erscheint in der Adresszeile. Nutze dann den Discord-Account mit der korrekten E-Mail.
+       </Info>
+  </Tab>
+  <Tab title="Social Login: Twitch">
+    Anmeldung über Twitch:
+
+    1. Klicke auf den Button **"Login mit Twitch"**.
+    2. Bestätige die Verbindung auf der Twitch-Seite.
+    3. **Wichtig**: Die bei Twitch hinterlegte E-Mail muss mit deiner SMARTqrPRINT-Mail übereinstimmen.
+
+       <Info>
+         Ist die E-Mail-Adresse nicht identisch, wirst du zur Login-Seite zurückgeleitet. Der Fehlerhinweis `error=twitch` erscheint in der Adresszeile. Nutze dann den Twitch-Account mit der korrekten E-Mail.
+       </Info>
+  </Tab>
+</Tabs>
+
+### Nach dem Login: Wichtige Informationen
+
+Ein erfolgreicher Login hat folgende Auswirkungen:
+
+- **Weiterleitung**: Du gelangst direkt auf deine persönliche `/upload`-Seite.
+- **Deine Session**: Dein Browser erhält ein Cookie mit dem Namen `x1xxXXxXx`. Dieses Cookie hält dich für bis zu 24 Stunden angemeldet.
+
+  <Info>
+    Das Session-Cookie `x1xxXXxXx` hält deine Anmeldung aktiv. Ein Zugriff Dritter auf dieses Cookie sollte verhindert werden, da es theoretisch missbraucht werden könnte.
+  </Info>
+- **Login-Benachrichtigung per E-Mail\!**
+
+  <Warning>
+    Bei _jedem_ Login – egal ob klassisch, über Discord oder Twitch – wird eine E-Mail an deine registrierte Adresse gesendet. Diese Mail dient deiner Sicherheit und enthält folgende Informationen:
+    - **Wann?** Exakter Zeitpunkt des Logins.
+    - **Wo?** Dein ungefährer Standort (basierend auf der IP-Adresse).
+    - **Womit?** Details zu deinem Gerät (z.B. Browser, Betriebssystem).
+
+    Wenn du eine solche E-Mail erhältst, dich aber nicht selbst eingeloggt hast, solltest du umgehend dein Passwort ändern und uns kontaktieren.
+  </Warning>
+
+---

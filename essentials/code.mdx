@@ -1,37 +1,88 @@
 ---
-title: 'Code Blocks'
-description: 'Display inline code and code blocks'
-icon: 'code'
+title: "PRINT2MAIL"
+description: "Dokumente per E-Mail hochladen – so funktioniert der SMARTqrPRINT PRINT2MAIL-Dienst."
+icon: "envelope"
 ---
 
-## Basic
+# Print2Mail
 
-### Inline Code
+Mit PRINT2MAIL kannst du dein Dokument bequem per E-Mail an SMARTqrPRINT senden – ganz ohne Login, direkt aus deinem E-Mail-Postfach heraus.
 
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
+Diese Funktion eignet sich besonders für unterwegs oder wenn du gerade keinen Zugriff auf die Webseite hast.
 
-```
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
-```
+---
 
-### Code Block
+## So funktioniert PRINT2MAIL
 
-Use [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) by enclosing code in three backticks and follow the leading ticks with the programming language of your snippet to get syntax highlighting. Optionally, you can also write the name of your code after the programming language.
+Um PRINT2MAIL zu nutzen, sende einfach eine E-Mail mit deiner Datei im Anhang an:
 
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
+[**druck@smartqrprint.de**](mailto:druck@smartqrprint.de)
 
-````md
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-````
+### Voraussetzungen:
+
+- Die Absender-E-Mail muss identisch mit der bei SMARTqrPRINT registrierten E-Mail-Adresse sein.
+- Die Datei darf max. **4 Seiten (PDF)** enthalten und nicht größer als **20 MB** sein.
+- Es sind nur bestimmte **Dateiformate** erlaubt (siehe unten).
+- Du kannst maximal **eine Datei pro E-Mail** senden.
+
+Nach dem Versand wird dein Dokument verarbeitet und erscheint in deinem Nutzerkonto wie ein normaler Upload.
+
+---
+
+## Unterstützte Dateiformate
+
+PRINT2MAIL akzeptiert dieselben Formate wie der Upload auf der Webseite:
+
+| Kategorie     | Erlaubte Formate                                  |
+| ------------- | ------------------------------------------------- |
+| PDF und Druck | `.pdf`, `.postscript`                             |
+| Bilder        | `.jpg`, `.jpeg`, `.png`, `.svg`, `.tiff`, `.webp` |
+| Textdokumente | `.txt`, `.rtf`, `.odt`                            |
+
+> **Nicht erlaubt:** `.docx`, `.zip`, `.exe`, `.bat`, `.sh`, eingebettete Skripte oder passwortgeschützte Dokumente.
+
+---
+
+## Ablauf nach dem Versand
+
+1. Die E-Mail wird automatisch empfangen und analysiert.
+2. Das System prüft:
+   - ob der Absender autorisiert ist,
+   - ob das Dateiformat zulässig ist,
+   - ob Größe und Seitenanzahl passen.
+3. Wenn alle Bedingungen erfüllt sind:
+   - Die Datei wird gespeichert,
+   - ein Barcode wird automatisch erstellt,
+   - du erhältst eine Bestätigungs-E-Mail.
+
+> **Wichtig:** E-Mails von unbekannten oder nicht autorisierten Adressen werden vollständig ignoriert.
+
+---
+
+## Hinweise und Tipps
+
+- Sende **immer nur eine Datei pro E-Mail**, um Fehler bei der Verarbeitung zu vermeiden.
+- Stelle sicher, dass dein E-Mail-Konto keine automatische Komprimierung (z. B. `.zip`) durchführt.
+- Wenn du **keine Rückmeldung** bekommst, prüfe den Spam-Ordner oder melde dich über die Webseite an, um den Status zu sehen.
+
+---
+
+## Vorteile von PRINT2MAIL
+
+- Kein Login erforderlich
+- Ideal für mobile Nutzung
+- Keine zusätzliche Software nötig
+- Automatischer Barcode nach erfolgreichem Upload
+- E-Mail-Nachricht dient gleichzeitig als Nachweis
+
+---
+
+## Support & Hilfe
+
+Falls etwas nicht funktioniert oder du keine Rückmeldung erhältst, kontaktiere bitte den Support unter:\
+[**https://www.smartqrprint.de/support**](https://www.smartqrprint.de/support)
+
+---
+
+Weitere Anleitungen findest du unter:\
+[**https://doku.smartqrprint.de/**](https://doku.smartqrprint.de/)
