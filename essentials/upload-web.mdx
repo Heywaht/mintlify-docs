@@ -1,91 +1,115 @@
 ---
-title: "Ein Dokument hochladen über das Portal"
-description: "Mit SMARTqrPRINT kannst du Dokumente direkt über die Webseite hochladen und später bequem am Standort drucken. Diese Anleitung erklärt dir den genauen Ablauf, empfohlene Formate und häufige Fehlerquellen."
-icon: "upload"
+title: "Web-Upload"
+description: "Das Webportal ist dein zentraler Ort, um Dateien schnell und unkompliziert für den Druck oder weitere Funktionen bei SMARTqrPRINT vorzubereiten. Hier erfährst du alles Wichtige zum Upload-Vorgang."
 ---
 
 
-## So funktioniert der Upload
-
-Um ein Dokument hochzuladen, folge diesen Schritten:
-
-1. Klicke auf die Schaltfläche „Datei auswählen“ oder ziehe die gewünschte Datei direkt in das markierte Upload-Feld.
-
-<img
-  src="/images/upload-web.png"
-  alt="Upload Web PN"
-  title="Upload Webschaltfläche"
-  className="mx-auto"
-/>
-
-1. Warte, bis der Upload abgeschlossen ist. Die Datei wird im Hintergrund analysiert und gespeichert.
-2. Nach erfolgreichem Upload erscheint dein Dokument in der Liste. Es wird automatisch ein eindeutiger Barcode generiert und angezeigt.
-3. Du erhältst zusätzlich eine E-Mail mit allen relevanten Informationen und dem Barcode als Bildanhang.
+<CardGroup cols={2}>
+  <Card title="📄 Dateiformate" icon="file" href="#dateiformate">
+    Welche Dateitypen du hochladen kannst und welche nicht.
+  </Card>
+  <Card title="Limits & Regeln" icon="tachograph-digital" href="#limits">
+    Seitenbeschränkungen und andere wichtige Hinweise, die du beachten solltest.
+  </Card>
+</CardGroup>
 
 ---
 
-## Erlaubte Dateiformate
+## So lädst du Dateien hoch: Schritt für Schritt <a id="wie-hochladen" />
 
-Das System akzeptiert nur ausgewählte Formate. Dateien mit potenziell unsicherem Inhalt (z. B. Skripte, Makros oder ausführbare Dateien) werden automatisch abgelehnt.
+Das Hochladen deiner Dateien ist einfach gestaltet. Mit wenigen Klicks ist deine Datei sicher im System und bereit für den nächsten Schritt.
 
-| Kategorie      | Erlaubte Formate                                          |
-| -------------- | --------------------------------------------------------- |
-| PDF und Druck  | `.pdf`, `.postscript`, `.cups-pdf`                        |
-| Bilder         | `.jpg`, `.jpeg`, `.png`, `.svg`, `.bmp`, `.tiff`, `.webp` |
-| Textdokumente  | `.txt`, `.rtf`, `.doc`, `.docx`, `.odt`                   |
-| Tabellen/Präsi | `.ods`, `.odp`                                            |
-| HTML/CSS       | `.html`, `.css`, `.xhtml`, `.xml`                         |
+<Accordion title="Der Upload-Prozess im Detail">
+  1. **Bereit zum Senden?**
 
-> **Hinweis**: Word-Dokumente im Format `.docx` werden derzeit **nicht mehr unterstützt**. Bitte wandle dein Dokument vorher in eine PDF-Datei um, damit du Sie hochladen kannst. \
-> _Alternativ nutze den integrierten Windows/MacOS/Linux Drucker._
+     {/* Hier Platz für ein Screenshot oder eine Illustration des Upload-Bereichs */}
 
----
-
-## Größen- und Seitenbeschränkung
-
-- Die maximale Seitenanzahl für PDF-Dateien beträgt **4 Seiten** pro Upload.
-- Dein Hauptspeicher beträgt  100MB pro Account, du dartfst dieses Limit nicht überschreiten.
-- Ein Upload ist bis 5MB pro Datei möglich. Für mehr MB nutze die API.
-
-Wird eine dieser Grenzen überschritten, wird der Upload automatisch verweigert.
-
----
-
-## Nach dem Upload
-
-Nach dem erfolgreichen Hochladen geschieht Folgendes:
-
-- Die Datei wird auf gültiges Format und Sicherheit geprüft.
-- Ein eindeutiger interner Hash wird erstellt. (dieser ist nur intern zuordenbar)
-- Ein **Barcode** wird generiert.
-- Das Barcode-Bild wird zusammen mit dem Dokument gespeichert.
-- Du erhältst eine E-Mail mit einem Link zur Datei und dem Barcode.
-
-> **Hinweis:** Der Barcode ist notwendig, um den Druck später eindeutig auszulösen.
+     <Info>
+       Stelle sicher, dass du im Webportal auf der `/upload`-Seite eingeloggt bist. Ohne aktiven Login geht hier nichts\!
+     </Info>
+  2. **Datei auswählen**: Klicke auf den Upload-Button (meist beschriftet mit "Datei auswählen" oder einem ähnlichen Text) und wähle die Datei von deinem Computer aus, die du hochladen möchtest.
+  3. **Magie im Hintergrund (Kurzversion für dich)**:
+     - Deine Datei wird an das System gesendet.
+     - Sie bekommt einen einzigartigen Namen, damit nichts durcheinandergerät.
+     - Wenn es eine PDF-Datei ist, prüft das System kurz, ob sie nicht zu viele Seiten hat (mehr dazu unten).
+     - Die Datei landet sicher auf unseren Servern (in der Cloud, genauer gesagt bei S3).
+     - Gleichzeitig wird ein spezieller Barcode (CODE128) für deine Datei erstellt. Dieser Barcode ist dein Schlüssel, um die Datei später am Drucker zu identifizieren. Auch das Bild dieses Barcodes wird gespeichert.
+     - Alle wichtigen Infos zu deinem Upload (wie der Dateipfad und der Barcode) werden in deinem Benutzerkonto vermerkt.
+     - Dein genutzter Speicherplatz wird aktualisiert.
+  4. **Bestätigung per E-Mail**: Sobald alles erledigt ist, bekommst du eine E-Mail, dass dein Upload erfolgreich war. Diese E-Mail enthält auch den generierten Barcode und Details zur Datei.
+  5. **Fertig\!** Du wirst automatisch zurück zu deiner `/upload`-Übersichtsseite geleitet, wo du deinen neuen Upload sehen kannst.
+</Accordion>
 
 ---
 
-## Häufige Probleme und Hinweise
+## Was du hochladen kannst: Erlaubte Dateiformate <a id="dateiformate" />
 
-**Die Datei wird nicht akzeptiert:**\
-Stelle sicher, dass dein Dateiformat zulässig ist und die Datei keine aktiven Inhalte (Makros, eingebettete Scripte) enthält.
+SMARTqrPRINT ist flexibel, aber nicht jedes Dateiformat ist für den Druck oder die Weiterverarbeitung geeignet. Hier ist eine Übersicht der gängigsten Formate, die du problemlos hochladen kannst:
 
-**Es erscheint kein Barcode nach dem Upload:**\
-Lade die Seite nach einigen Sekunden neu. Sollte der Barcode auch dann nicht angezeigt werden, kontaktiere bitte den Support, über den Chat mit den Hash der Datei.
+<Tabs>
+  <Tab title="Dokumente">
+    - **`PDF (.pdf)`**: Das bevorzugte Format, besonders für mehrseitige Dokumente.
+    - **`Textdateien (.txt)`**: Für einfache Textinhalte.
+    - **`RTF (.rtf)`**: Rich Text Format.
+    - **`OpenDocument Text (.odt)`**: LibreOffice/OpenOffice Writer Dokumente.
+    - **``Hinweis zu Microsoft Word (.docx, .doc)``**:
 
-**Keine E-Mail erhalten:**\
-Prüfe zunächst deinen Spam-Ordner. Falls auch dort keine E-Mail zu finden ist, stelle sicher, dass deine registrierte E-Mail-Adresse korrekt ist\!
+      <Warning>
+        Obwohl `.docx` und `.doc` technisch vielleicht noch in internen Listen auftauchen, erhältst du beim Versuch, eine **DOCX-Datei hochzuladen, eine Fehlermeldung**: `DOCX wird nicht mehr unterstützt. Bitte PDF hochladen!`. Konvertiere deine Word-Dateien also am besten vorher in PDF.
+      </Warning>
+  </Tab>
+  <Tab title="Bilder">
+    - **``JPEG (.jpg, .jpeg)``**
+    - **`PNG (.png)`**
+    - **`GIF (.gif)`**
+    - **`BMP (.bmp)`**
+    - **`TIFF (.tiff)`**
+    - **`WebP (.webp)`**
+    - **`SVG (.svg)`** (Vektorgrafiken)
+    - **`ICO (.ico)`** (Icons)
+  </Tab>
+  <Tab title="Präsentationen & Tabellen">
+    - **`OpenDocument Spreadsheet (.ods)`**: LibreOffice/OpenOffice Calc.
+    - **`OpenDocument Presentation (.odp)`**: LibreOffice/OpenOffice Impress.
+  </Tab>
+  <Tab title="Andere nützliche Formate">
+    - **``HTML (.html, .xhtml)``**
+    - **`CSS (.css)`**
+    - **`XML (.xml)`**
+    - **`JSON (.json)`**
+    - Diverse CUPS- und PostScript-Formate (eher für fortgeschrittene Nutzer relevant).
+  </Tab>
+</Tabs>
+
+<Warning>
+  Aus Sicherheitsgründen sind bestimmte Dateitypen, insbesondere ausführbare Dateien oder Skripte (z.B. `.sh`, `.pl`, `.py`, `.php`), vom Upload **ausgeschlossen**. Das System wird solche Dateien direkt abweisen.
+</Warning>
 
 ---
 
-## Sicherheit
+## Grenzen des Uploads: Was du beachten musst <a id="limits" />
 
-SMARTqrPRINT prüft alle Uploads serverseitig und blockiert:
+Damit alles reibungslos funktioniert, gibt es ein paar Regeln und Limits:
 
-- Dateien mit aktiven Inhalten (Makros, Scripte, eingebetteter Code)
-- unerlaubte Dateiformate
-- Uploads, die bekannte Sicherheitsrisiken darstellen
+<AccordionGroup>
+  <Accordion title="Seitenbeschränkung für PDFs" icon="file-contract">
+    Für **PDF-Dateien** gilt eine wichtige Regel:
 
-Die Verarbeitung erfolgt vollständig isoliert. Dateien werden nicht verändert, nicht analysiert und nicht an Dritte weitergegeben.
+    - **Maximal 4 Seiten pro PDF-Datei.**
+    - Hast du ein längeres PDF-Dokument? Kein Problem\! Teile es einfach in mehrere kleinere PDFs mit jeweils bis zu 4 Seiten auf und lade diese einzeln hoch.
+    - Das System prüft die Seitenzahl beim Upload. Überschreitest du das Limit, erhältst du eine Fehlermeldung: `Die Datei hat zu viele Seiten. Bitte teile in mehrere Uploads auf.`
+  </Accordion>
+  <Accordion title="Speicherlimit für dein Konto" icon="floppy-disk">
+    Dein Benutzerkonto hat ein Gesamt-Speicherlimit von **100 MB**. Dieses Limit setzt sich zusammen aus:
 
----
+    - Der Größe deiner hochgeladenen Originaldateien.
+    - Der Größe der generierten Barcode-Bilder.
+    - Einem kleinen, systemreservierten Speicherplatz (ca. 17 MB), sobald du mindestens eine Datei hochgeladen hast.
+
+    Du kannst deinen aktuellen Speicherverbrauch jederzeit in deinem Profil auf der `/upload`-Seite einsehen. Ist das Limit erreicht, musst du erst alte Dateien löschen, bevor du neue hochladen kannst.
+
+    <Info>
+      Der Speicherplatz wird mithilfe von Redis zwischengespeichert, um die Anzeige zu beschleunigen. Nach einem Upload oder dem Löschen einer Datei wird dieser Cache normalerweise direkt aktualisiert.
+    </Info>
+  </Accordion>
+</AccordionGroup>
